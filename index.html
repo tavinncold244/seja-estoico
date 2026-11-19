@@ -6,9 +6,9 @@
 <title>Seja Estoico · Estoico Noturno</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Seja Estoico: como lidar com a ansiedade usando o que Marco Aurélio escrevia pra si mesmo. E-book em PDF, acesso imediato.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preload" as="image" href="livro-seja-estoico-480.webp" media="(max-width:640px)"><link rel="preload" as="image" href="livro-seja-estoico.webp" media="(min-width:641px)">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap"><link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"><noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
   :root{
     --bg:#141313;
@@ -217,8 +217,8 @@
     .mini{aspect-ratio:auto;min-height:260px}
     .facts{grid-template-columns:1fr}
   }
-  .btn.buy{background:#1fbf4a!important;border-color:#1fbf4a!important;color:#fff!important;box-shadow:0 0 18px rgba(31,191,74,.45)}
-  .btn.buy:hover{background:#18a63f!important}
+  .btn.buy{background:#15803d!important;border-color:#15803d!important;color:#fff!important;box-shadow:0 0 18px rgba(31,191,74,.45)}
+  .btn.buy:hover{background:#166534!important}
   .selo{display:block;width:180px;height:auto;margin:28px auto 8px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
   .real-pages{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto}
   .real-pages img{width:100%;height:auto;display:block;box-shadow:0 20px 50px rgba(0,0,0,.6)}
@@ -235,6 +235,7 @@
   @media(max-width:640px){.avatar-img{max-width:180px}}
   .parcela{font-family:var(--display);font-size:clamp(18px,2.4vw,24px);color:var(--cream);letter-spacing:.02em;margin-top:6px}
   footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+  .eyebrow,.chap,.meta{color:#ff5a50}
 </style>
 </head>
 <body>
@@ -256,7 +257,7 @@
       <div class="price-note">Pagamento único. Garantia de 7 dias.</div>
     </div>
     <div class="book-stage">
-      <img class="book-img" src="livro-seja-estoico.webp" alt="Capa do livro Seja Estoico, do Estoico Noturno" width="900" height="1200">
+      <img class="book-img" src="livro-seja-estoico.webp" srcset="livro-seja-estoico-480.webp 480w, livro-seja-estoico.webp 675w" sizes="(max-width:640px) 80vw, 440px" fetchpriority="high" decoding="async" alt="Capa do livro Seja Estoico, do Estoico Noturno" width="900" height="1200">
     </div>
   </div>
 </section>
@@ -323,7 +324,7 @@
           <div><b>Perdas</b><span>Filhos, a esposa, amigos próximos.</span></div>
           <div><b>O cargo</b><span>O peso de decidir por milhões de pessoas.</span></div>
         </div>
-        <img class="illus-img" src="marco-aurelio-tenda.webp" alt="Marco Aurélio escrevendo à luz de vela, numa tenda de campanha" loading="lazy">
+        <img class="illus-img" src="marco-aurelio-tenda.webp" alt="Marco Aurélio escrevendo à luz de vela, numa tenda de campanha" loading="lazy" decoding="async" width="900" height="506">
       </div>
     </div>
   </div>
@@ -370,22 +371,22 @@
     <h2 class="h2">Cada capítulo,<br>o mesmo <em>caminho.</em></h2>
     <p class="lead">Você sabe sempre onde está. Seis passos, do seu dia a dia até o caderno de Marco Aurélio, e de volta.</p>
     <div class="steps carousel"><div class="car-track">
-      <figure><div class="shot"><img src="pg-abertura.webp" alt="Abertura do capítulo 1" loading="lazy"><span class="k">I</span></div><figcaption class="cap"><b>Capítulo 1:</b> O café esfriou.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-cap1.webp" alt="Primeira página do capítulo 1" loading="lazy"><span class="k">p.4</span></div><figcaption class="cap"><b>A primeira página:</b> como o livro começa.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-cena.webp" alt="Página do livro: A cena" loading="lazy" width="642" height="909"><span class="k">01</span></div><figcaption class="cap"><b>A cena:</b> um momento comum, para você se reconhecer.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-vida.webp" alt="Página do livro: A vida dele" loading="lazy" width="642" height="909"><span class="k">02</span></div><figcaption class="cap"><b>A vida dele:</b> uma situação real de Marco Aurélio, parecida com a sua.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-escreveu.webp" alt="Página do livro: O que ele escreveu" loading="lazy" width="642" height="909"><span class="k">03</span></div><figcaption class="cap"><b>O que ele escreveu:</b> explicado em linguagem simples, com a passagem indicada.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-interpretacao.webp" alt="Página do livro: O que ele provavelmente faria" loading="lazy" width="642" height="909"><span class="k">04</span></div><figcaption class="cap"><b>O que ele provavelmente faria:</b> sempre marcado como interpretação, não como fato.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-exercicio.webp" alt="Página do livro: O exercício" loading="lazy" width="642" height="909"><span class="k">05</span></div><figcaption class="cap"><b>O exercício:</b> prático, curto, para fazer no mesmo dia.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-falha.webp" alt="Página do livro: Onde isso falha" loading="lazy" width="642" height="909"><span class="k">06</span></div><figcaption class="cap"><b>Onde isso falha:</b> o limite honesto do método, em cada tema.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-abertura.webp" alt="Abertura do capítulo 1" loading="lazy" aria-hidden="true"><span class="k">I</span></div><figcaption class="cap"><b>Capítulo 1:</b> O café esfriou.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-cap1.webp" alt="Primeira página do capítulo 1" loading="lazy" aria-hidden="true"><span class="k">p.4</span></div><figcaption class="cap"><b>A primeira página:</b> como o livro começa.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-cena.webp" alt="Página do livro: A cena" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">01</span></div><figcaption class="cap"><b>A cena:</b> um momento comum, para você se reconhecer.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-vida.webp" alt="Página do livro: A vida dele" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">02</span></div><figcaption class="cap"><b>A vida dele:</b> uma situação real de Marco Aurélio, parecida com a sua.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-escreveu.webp" alt="Página do livro: O que ele escreveu" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">03</span></div><figcaption class="cap"><b>O que ele escreveu:</b> explicado em linguagem simples, com a passagem indicada.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-interpretacao.webp" alt="Página do livro: O que ele provavelmente faria" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">04</span></div><figcaption class="cap"><b>O que ele provavelmente faria:</b> sempre marcado como interpretação, não como fato.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-exercicio.webp" alt="Página do livro: O exercício" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">05</span></div><figcaption class="cap"><b>O exercício:</b> prático, curto, para fazer no mesmo dia.</figcaption></figure>
-      <figure><div class="shot"><img src="pg-falha.webp" alt="Página do livro: Onde isso falha" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">06</span></div><figcaption class="cap"><b>Onde isso falha:</b> o limite honesto do método, em cada tema.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-abertura.webp" alt="Abertura do capítulo 1" loading="lazy" decoding="async" width="759" height="1075"><span class="k">I</span></div><figcaption class="cap"><b>Capítulo 1:</b> O café esfriou.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cap1.webp" alt="Primeira página do capítulo 1" loading="lazy" decoding="async" width="759" height="1075"><span class="k">p.4</span></div><figcaption class="cap"><b>A primeira página:</b> como o livro começa.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cena.webp" alt="Página do livro: A cena" loading="lazy" decoding="async" width="642" height="909"><span class="k">01</span></div><figcaption class="cap"><b>A cena:</b> um momento comum, para você se reconhecer.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-vida.webp" alt="Página do livro: A vida dele" loading="lazy" decoding="async" width="642" height="909"><span class="k">02</span></div><figcaption class="cap"><b>A vida dele:</b> uma situação real de Marco Aurélio, parecida com a sua.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-escreveu.webp" alt="Página do livro: O que ele escreveu" loading="lazy" decoding="async" width="642" height="909"><span class="k">03</span></div><figcaption class="cap"><b>O que ele escreveu:</b> explicado em linguagem simples, com a passagem indicada.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-interpretacao.webp" alt="Página do livro: O que ele provavelmente faria" loading="lazy" decoding="async" width="642" height="909"><span class="k">04</span></div><figcaption class="cap"><b>O que ele provavelmente faria:</b> sempre marcado como interpretação, não como fato.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-exercicio.webp" alt="Página do livro: O exercício" loading="lazy" decoding="async" width="642" height="909"><span class="k">05</span></div><figcaption class="cap"><b>O exercício:</b> prático, curto, para fazer no mesmo dia.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-falha.webp" alt="Página do livro: Onde isso falha" loading="lazy" decoding="async" width="642" height="909"><span class="k">06</span></div><figcaption class="cap"><b>Onde isso falha:</b> o limite honesto do método, em cada tema.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-abertura.webp" alt="Abertura do capítulo 1" loading="lazy" decoding="async" aria-hidden="true" width="759" height="1075"><span class="k">I</span></div><figcaption class="cap"><b>Capítulo 1:</b> O café esfriou.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cap1.webp" alt="Primeira página do capítulo 1" loading="lazy" decoding="async" aria-hidden="true" width="759" height="1075"><span class="k">p.4</span></div><figcaption class="cap"><b>A primeira página:</b> como o livro começa.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cena.webp" alt="Página do livro: A cena" loading="lazy" decoding="async" aria-hidden="true" width="642" height="909"><span class="k">01</span></div><figcaption class="cap"><b>A cena:</b> um momento comum, para você se reconhecer.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-vida.webp" alt="Página do livro: A vida dele" loading="lazy" decoding="async" aria-hidden="true" width="642" height="909"><span class="k">02</span></div><figcaption class="cap"><b>A vida dele:</b> uma situação real de Marco Aurélio, parecida com a sua.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-escreveu.webp" alt="Página do livro: O que ele escreveu" loading="lazy" decoding="async" aria-hidden="true" width="642" height="909"><span class="k">03</span></div><figcaption class="cap"><b>O que ele escreveu:</b> explicado em linguagem simples, com a passagem indicada.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-interpretacao.webp" alt="Página do livro: O que ele provavelmente faria" loading="lazy" decoding="async" aria-hidden="true" width="642" height="909"><span class="k">04</span></div><figcaption class="cap"><b>O que ele provavelmente faria:</b> sempre marcado como interpretação, não como fato.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-exercicio.webp" alt="Página do livro: O exercício" loading="lazy" decoding="async" aria-hidden="true" width="642" height="909"><span class="k">05</span></div><figcaption class="cap"><b>O exercício:</b> prático, curto, para fazer no mesmo dia.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-falha.webp" alt="Página do livro: Onde isso falha" loading="lazy" decoding="async" aria-hidden="true" width="642" height="909"><span class="k">06</span></div><figcaption class="cap"><b>Onde isso falha:</b> o limite honesto do método, em cada tema.</figcaption></figure>
     </div></div>
   </div>
 </section>
@@ -452,7 +453,7 @@
     <div class="eyebrow">Quem escreveu</div>
     <h2 class="h2">Estoico<br><em>Noturno.</em></h2>
     <div class="author">
-      <img class="avatar-img" src="autor.webp" alt="Ilustração do Estoico Noturno" loading="lazy">
+      <img class="avatar-img" src="autor.webp" alt="Ilustração do Estoico Noturno" loading="lazy" decoding="async" width="400" height="400">
       <div>
         <p>Estoico Noturno é um canal no YouTube sobre estoicismo aplicado à ansiedade do dia a dia. Não sobre a filosofia de museu, mas sobre o que ela pode fazer numa terça-feira difícil.</p>
         <p>Eu convivo com ansiedade todos os dias. Acordo e a cabeça já está lá na frente, ensaiando conversas que ainda não aconteceram e problemas que talvez nem aconteçam. Antes mesmo de começar qualquer coisa, eu já estou cansado dela. A preocupação vira preguiça, a preguiça vira culpa, e a culpa alimenta a preocupação de novo.</p>
