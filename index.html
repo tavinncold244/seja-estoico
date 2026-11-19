@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seja Estoico · Estoico Noturno</title>
+<meta name="description" content="Seja Estoico: como lidar com a ansiedade usando o que Marco Aurélio escrevia pra si mesmo. E-book em PDF, acesso imediato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141313;
+    --surface:#1b1a19;
+    --surface-2:#222120;
+    --line:#2b2928;
+    --red:#e5251e;
+    --red-deep:#b81c16;
+    --cream:#f1e9da;
+    --text:#d9d3c8;
+    --muted:#8f8982;
+    --display:'Anton', Impact, sans-serif;
+    --serif:'Newsreader', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --wrap:1040px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  section{padding:110px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .h2{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--cream);font-size:clamp(48px,8vw,84px);line-height:1.12;letter-spacing:.005em;padding-top:.08em}
+  .h2 em{font-style:normal;color:var(--red)}
+  .lead{max-width:560px;margin-top:22px;color:var(--text);font-size:15px}
+  .btn{display:inline-block;background:var(--cream);color:#141313;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 30px;border-radius:2px;transition:transform .15s, background .15s}
+  .btn:hover{background:#fff;transform:translateY(-1px)}
+  .btn.red{background:var(--red);color:var(--cream)}
+  .btn.red:hover{background:var(--red-deep)}
+  .ph{color:var(--red);font-weight:600}
+
+  /* header */
+  header{padding:28px 0 0}
+  .brand{font-family:var(--display);color:var(--red);font-size:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+
+  /* hero */
+  .hero{padding:70px 0 90px;border:0}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-family:var(--serif);font-weight:500;color:var(--cream);font-size:clamp(36px,5vw,52px);line-height:1.08;letter-spacing:-.01em}
+  .hero .sub{margin-top:18px;max-width:440px;font-size:15px}
+  .hero .sub strong{color:var(--cream);font-weight:600}
+  .hero .btn{margin-top:30px}
+  .meta{margin-top:26px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .price{font-family:var(--display);color:var(--red);font-size:34px;line-height:1.1;margin-top:4px}
+  .price-note{font-size:12px;color:var(--muted)}
+
+  /* book */
+  .book-stage{position:relative;display:flex;justify-content:center}
+  .book-stage::after{content:"";position:absolute;bottom:-18px;left:50%;width:60%;height:26px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(0,0,0,.65),transparent);animation:shadow 5s ease-in-out infinite}
+  .book-img{width:min(320px,100%);height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55));animation:float 5s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  @keyframes shadow{0%,100%{opacity:1;width:60%}50%{opacity:.55;width:48%}}
+
+  /* marquee */
+  .ticker{background:var(--red);transform:rotate(-2deg);margin:0 -40px;padding:14px 0;overflow:hidden;border:0}
+  .ticker-track{display:flex;width:max-content;animation:scroll 90s linear infinite}
+  .ticker span{font-family:var(--display);color:#141313;font-size:28px;text-transform:uppercase;white-space:nowrap;padding-right:28px}
+  .ticker b{font-weight:400;padding-right:28px}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .after-ticker{border-top:0;padding-top:130px}
+
+  /* cena */
+  .scene{margin-top:40px;max-width:640px;font-family:var(--serif);font-size:clamp(20px,2.4vw,25px);line-height:1.5;color:var(--cream)}
+  .scene p+p{margin-top:12px}
+  .scene .dim{color:var(--muted)}
+
+  /* problema */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:44px}
+  .two p+p{margin-top:14px}
+  .pot{background:var(--surface);border:1px solid var(--line);padding:28px}
+  .pot h3{font-family:var(--serif);color:var(--cream);font-weight:500;font-size:20px;margin-bottom:16px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{font-size:12.5px;border:1px solid #3a3634;padding:6px 11px;border-radius:999px;color:var(--text)}
+  .chips span:nth-child(3n){border-color:var(--red);color:var(--cream)}
+  .pot small{display:block;margin-top:18px;color:var(--muted);font-size:12.5px}
+
+  /* virada */
+  .virada{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:44px;align-items:start}
+  .virada p+p{margin-top:14px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .facts div{background:var(--surface);padding:20px}
+  .facts b{display:block;font-family:var(--display);font-weight:400;color:var(--red);font-size:22px;text-transform:uppercase;margin-bottom:4px}
+  .facts span{font-size:13px}
+  .illus{margin-top:20px;aspect-ratio:16/9;border:1px dashed #4a4542;display:grid;place-items:center;text-align:center;padding:20px;font-size:12px;color:var(--muted);background:repeating-linear-gradient(135deg,#191817 0 10px,#1b1a19 10px 20px)}
+
+  /* é / não é */
+  .isnot{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+  .isnot > div{background:var(--surface);padding:32px}
+  .isnot h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:28px;color:var(--cream);margin-bottom:16px}
+  .isnot .no h3{color:var(--red)}
+  .isnot ul{list-style:none}
+  .isnot li{padding:10px 0;border-top:1px solid var(--line);font-size:14px}
+  .isnot li:first-child{border-top:0}
+  .name-note{margin-top:28px;padding:24px 28px;border-left:3px solid var(--red);background:var(--surface);font-family:var(--serif);font-size:19px;color:var(--cream);line-height:1.45}
+  .name-note span{display:block;margin-top:8px;font-family:var(--sans);font-size:14px;color:var(--text)}
+
+  /* caminho */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 16px;margin-top:44px}
+  .mini{background:var(--surface);border:1px solid var(--line);aspect-ratio:4/5;padding:22px 20px;display:flex;flex-direction:column;gap:9px;overflow:hidden}
+  .mini .k{font-family:var(--display);color:var(--red);font-size:34px;line-height:1}
+  .mini .tt{font-family:var(--serif);color:var(--cream);font-size:18px;line-height:1.2;margin-bottom:6px}
+  .mini i{display:block;height:5px;background:#2e2c2a;border-radius:2px}
+  .mini i.s{width:70%}.mini i.xs{width:45%}
+  .mini .box{margin-top:8px;border:1px solid var(--red);padding:10px;font-family:var(--serif);font-style:italic;font-size:13px;color:#cfc4b2;line-height:1.35}
+  .mini .tag{align-self:flex-start;font:600 9.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:var(--cream);padding:4px 7px}
+  .shot{position:relative;background:var(--surface);border:1px solid var(--line);padding:10px;overflow:hidden}
+  .shot img{display:block;width:100%;height:auto;transition:transform .4s}
+  .shot:hover img{transform:scale(1.03)}
+  .shot .k{position:absolute;top:18px;left:18px;font-family:var(--display);font-size:22px;color:var(--cream);background:var(--red);padding:2px 9px}
+  .cap{margin-top:10px;font-size:13px}
+  .cap b{color:var(--cream);font-weight:500}
+
+  /* capitulos */
+  .acervo{display:grid;grid-template-columns:.8fr 1.6fr;gap:56px}
+  .acervo .h2 .big{font-size:1.1em}
+  .list{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+  .item{display:grid;grid-template-columns:28px 1fr;gap:4px 10px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .item .n{font-family:var(--display);color:var(--red);font-size:14px;padding-top:1px}
+  .item .ti{color:var(--cream);font-size:14px;font-weight:500;line-height:1.3}
+  .item .de{grid-column:2;color:var(--muted);font-size:12.5px;line-height:1.4}
+  .apx{grid-column:1/-1;margin-top:26px;padding:20px 22px;background:var(--surface);border:1px solid var(--line)}
+  .apx b{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+  .apx span{font-size:13.5px}
+
+  /* previa */
+  .paper{margin-top:44px;max-width:720px;background:#efe6d2;color:#2a201c;padding:56px 60px;position:relative;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+  .paper .chap{font:600 10.5px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--red-deep)}
+  .paper h3{font-family:var(--serif);font-weight:500;font-size:30px;margin:6px 0 24px;line-height:1.15}
+  .paper p{font-family:var(--serif);font-size:18px;line-height:1.65}
+  .paper p+p{margin-top:14px}
+  .paper .interp{margin-top:22px;padding-top:14px;border-top:1px solid #cdbfa5;font:500 12px var(--sans);color:#7a6a5c}
+  .paper .pg{position:absolute;right:28px;bottom:18px;font:12px var(--serif);color:#8a7a6c}
+
+  /* para quem */
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+  .who > div{border:1px solid var(--line);padding:30px;background:var(--surface)}
+  .who h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:26px;color:var(--cream);margin-bottom:14px}
+  .who .not h3{color:var(--red)}
+  .who ul{list-style:none}
+  .who li{position:relative;padding:9px 0 9px 22px;font-size:14px}
+  .who li::before{content:"✶";position:absolute;left:0;top:9px;color:var(--red);font-size:11px}
+  .who .not li::before{content:"—"}
+  .cvv{margin-top:14px;font-size:13px;color:var(--cream);background:#2a1513;border:1px solid #4a1c18;padding:12px 14px}
+
+  /* depoimentos */
+  .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+  .testis div{border:1px dashed #4a4542;padding:26px;min-height:150px;display:grid;place-items:center;text-align:center;color:var(--red);font-size:12px;font-weight:600;letter-spacing:.08em}
+
+  /* autor */
+  .author{display:grid;grid-template-columns:220px 1fr;gap:44px;margin-top:44px;align-items:start}
+  .avatar{aspect-ratio:1;border:1px dashed #4a4542;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--muted);padding:16px}
+  .author p+p{margin-top:14px}
+  .author .sig{font-family:var(--serif);font-style:italic;color:var(--cream);font-size:18px;margin-top:20px}
+
+  /* faq */
+  .faq{margin-top:40px;max-width:640px}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:18px 0;color:var(--cream);font-size:14px;font-weight:500}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--red);font-size:18px;line-height:1;transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{padding:0 0 20px;font-size:14px;max-width:580px}
+
+  /* oferta */
+  .offer{text-align:center;padding:130px 0 100px}
+  .offer .h2{font-size:clamp(40px,6.4vw,72px);max-width:900px;margin:0 auto}
+  .offer .lead{margin:24px auto 0}
+  .pack{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:32px auto 0;max-width:720px}
+  .pack li{font-size:12.5px;border:1px solid var(--line);padding:7px 12px;border-radius:999px}
+  .offer .meta{margin-top:40px}
+  .offer .price{font-size:clamp(56px,9vw,88px);color:#ff3b30;text-shadow:0 0 6px #ff3b30,0 0 18px #ff2a1f,0 0 40px #e5251e,0 0 80px #e5251e;animation:neon 2.4s ease-in-out infinite}
+  @keyframes neon{0%,100%{opacity:1;text-shadow:0 0 6px #ff3b30,0 0 18px #ff2a1f,0 0 40px #e5251e,0 0 80px #e5251e}50%{opacity:.88;text-shadow:0 0 4px #ff3b30,0 0 10px #ff2a1f,0 0 24px #e5251e}}
+  .price{text-shadow:0 0 8px rgba(229,37,30,.7),0 0 22px rgba(229,37,30,.5)}
+  .offer .btn{margin-top:28px}
+  .guar{display:inline-flex;gap:10px;align-items:center;margin-top:24px;font-size:12.5px}
+  .guar svg{flex:none}
+
+  /* aviso */
+  .health{border-top:1px solid var(--line);padding:44px 0}
+  .health .box{border:1px solid #4a1c18;background:#1d1312;padding:26px 28px}
+  .health b{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+  .health p{font-size:13.5px;color:var(--text)}
+  .health p+p{margin-top:8px}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;font-size:11.5px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    section{padding:80px 0}
+    .hero .wrap,.two,.virada,.isnot,.acervo,.who,.author{grid-template-columns:1fr}
+    .hero{padding:44px 0 70px}
+    .book-stage{order:-1}
+    .book-img{width:220px}
+    .steps{grid-template-columns:1fr 1fr}
+    .list{grid-template-columns:1fr}
+    .testis{grid-template-columns:1fr}
+    .paper{padding:38px 26px 48px}
+    .author .avatar{max-width:180px}
+    .ticker span{font-size:22px}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 16px}
+    .steps{grid-template-columns:1fr}
+    .mini{aspect-ratio:auto;min-height:260px}
+    .facts{grid-template-columns:1fr}
+  }
+  .btn.buy{background:#1fbf4a!important;border-color:#1fbf4a!important;color:#fff!important;box-shadow:0 0 18px rgba(31,191,74,.45)}
+  .btn.buy:hover{background:#18a63f!important}
+  .selo{display:block;width:180px;height:auto;margin:28px auto 8px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+  .real-pages{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:880px;margin:0 auto}
+  .real-pages img{width:100%;height:auto;display:block;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+  .pg-cap{text-align:center;font-size:13px;color:var(--muted);margin-top:14px}
+  @media(max-width:640px){.real-pages{grid-template-columns:1fr}}
+  .steps.carousel{display:block;overflow:hidden;margin-left:-16px;margin-right:-16px;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .car-track{display:flex;gap:0;width:max-content;animation:carousel 55s linear infinite}
+  .car-track:hover{animation-play-state:paused}
+  .car-track figure{width:260px;flex:0 0 260px;margin:0 20px 0 0}
+  @keyframes carousel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(max-width:640px){.car-track figure{width:200px;flex-basis:200px}}
+  .illus-img{display:block;width:100%;height:auto;margin-top:20px;border:1px solid #2a2725;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .avatar-img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:1px solid #2a2725}
+  @media(max-width:640px){.avatar-img{max-width:180px}}
+  .parcela{font-family:var(--display);font-size:clamp(18px,2.4vw,24px);color:var(--cream);letter-spacing:.02em;margin-top:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><a class="brand" href="#">Seja Estoico</a></div>
+</header>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>O café esfriou na sua mão. E você nem percebeu.</h1>
+      <p class="sub"><strong>Seja Estoico</strong> é um livro sobre ansiedade: como lidar com ela usando o que Marco Aurélio, imperador de Roma, escrevia pra si mesmo num caderno que nunca foi feito para ser lido.</p>
+      <a class="btn buy" href="#">Quero o Seja Estoico</a>
+      <div class="meta">E-book em PDF · ilustrado · acesso imediato</div>
+      <div class="price">R$ 27,90</div>
+    <div class="parcela">ou 6x de R$ 5,40</div>
+      <div class="price-note">Pagamento único. Garantia de 7 dias.</div>
+    </div>
+    <div class="book-stage">
+      <img class="book-img" src="livro-seja-estoico.webp" alt="Capa do livro Seja Estoico, do Estoico Noturno" width="900" height="1200">
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Ansiedade <b>✶</b> Pensar demais <b>✶</b> Insônia <b>✶</b> Medo do futuro <b>✶</b> Cabeça acelerada <b>✶</b> O que vão pensar <b>✶</b> Cobrança <b>✶</b> Medo de perder <b>✶</b> Acordar de madrugada <b>✶</b> Sofrer por antecipação <b>✶</b></span>
+    <span>Ansiedade <b>✶</b> Pensar demais <b>✶</b> Insônia <b>✶</b> Medo do futuro <b>✶</b> Cabeça acelerada <b>✶</b> O que vão pensar <b>✶</b> Cobrança <b>✶</b> Medo de perder <b>✶</b> Acordar de madrugada <b>✶</b> Sofrer por antecipação <b>✶</b></span>
+  </div>
+</div>
+
+<!-- 2. A CENA -->
+<section class="after-ticker" id="cena">
+  <div class="wrap">
+    <div class="eyebrow">A madrugada sem sono</div>
+    <h2 class="h2">Você conhece<br><em>essa cena.</em></h2>
+    <div class="scene">
+      <p>Você está na cozinha. A xícara na mão. O café já esfriou faz tempo.</p>
+      <p>A cabeça está longe: na conversa de amanhã, na conta do mês, naquela mensagem que ninguém respondeu.</p>
+      <p>Não aconteceu nada. Mesmo assim, o peito está apertado.</p>
+      <p>À noite é pior. O corpo deita, a mente não. Ela repassa, ensaia, imagina.</p>
+      <p class="dim">E de manhã você acorda cansado de uma briga que só existiu por dentro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. O PROBLEMA -->
+<section id="problema">
+  <div class="wrap">
+    <div class="eyebrow">O problema</div>
+    <h2 class="h2">"Tenta relaxar"<br><em>não funciona.</em></h2>
+    <div class="two">
+      <div>
+        <p>Você já ouviu. "Respira." "Não pensa nisso." "Vai dar tudo certo." E você tentou. Só que, quanto mais tenta não pensar, mais pensa.</p>
+        <p>Não é falta de força de vontade. A ansiedade não é uma coisa só. Ela é feita de muitas coisas pequenas, misturadas, todas falando ao mesmo tempo. Por isso parece enorme. Por isso parece que não tem por onde começar.</p>
+        <p>Antes de acalmar, é preciso separar. Olhar cada preocupação separada, em vez de sentir tudo ao mesmo tempo. Uma coisa de cada vez.</p>
+      </div>
+      <div class="pot">
+        <h3>O que costuma tirar seu sono de madrugada</h3>
+        <div class="chips">
+          <span>a reunião de quinta</span><span>o boleto</span><span>o que ela quis dizer</span><span>o exame</span><span>o chefe</span><span>e se eu perder o emprego</span><span>o barulho no peito</span><span>a mensagem sem resposta</span><span>o que pensaram de mim</span><span>meus pais envelhecendo</span><span>o sono que não vem</span><span>amanhã cedo</span>
+        </div>
+        <small>Tudo junto parece um monstro. Separado, cada coisa tem um tamanho.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. A VIRADA -->
+<section id="virada">
+  <div class="wrap">
+    <div class="eyebrow">A virada</div>
+    <h2 class="h2">Um imperador<br><em>também perdia o sono.</em></h2>
+    <div class="virada">
+      <div>
+        <p>Marco Aurélio governou Roma por quase vinte anos. Não foi um período tranquilo. Passou boa parte dele em acampamentos de guerra, longe de casa, enquanto uma peste matava gente em todo o império. Enterrou filhos. Perdeu a esposa. Foi traído por um general em quem confiava.</p>
+        <p>E, à noite, escrevia. Não para publicar. Escrevia pra si mesmo, num caderno particular, para lembrar como pensar quando a cabeça queria fugir. Esse caderno chegou até nós com o nome de <em>Meditações</em>.</p>
+        <p>Lendo de perto, ele não parece uma estátua. Parece alguém cansado, com medo, irritado com gente difícil, tentando de novo no dia seguinte. Alguém que lidava com a própria mente. Como você.</p>
+      </div>
+      <div>
+        <div class="facts">
+          <div><b>Guerra</b><span>Anos em campanha na fronteira do Danúbio.</span></div>
+          <div><b>Peste</b><span>Uma epidemia que atravessou o império inteiro.</span></div>
+          <div><b>Perdas</b><span>Filhos, a esposa, amigos próximos.</span></div>
+          <div><b>O cargo</b><span>O peso de decidir por milhões de pessoas.</span></div>
+        </div>
+        <img class="illus-img" src="marco-aurelio-tenda.webp" alt="Marco Aurélio escrevendo à luz de vela, numa tenda de campanha" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. O QUE É / NÃO É -->
+<section id="livro">
+  <div class="wrap">
+    <div class="eyebrow">O livro</div>
+    <h2 class="h2">O que ele é.<br><em>E o que não é.</em></h2>
+    <div class="isnot">
+      <div>
+        <h3>É</h3>
+        <ul>
+          <li>Um livro prático para pensar sobre a ansiedade, em vez de só tentar fazê-la sumir.</li>
+          <li>Uma forma de organizar o que a mente faz quando você deita e não consegue dormir.</li>
+          <li>Exercícios curtos, de 5 a 10 minutos, para fazer com papel e caneta.</li>
+          <li>Marco Aurélio explicado em linguagem simples, sem precisar saber filosofia.</li>
+          <li>Honesto: cada capítulo tem uma parte sobre onde o método falha.</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>Não é</h3>
+        <ul>
+          <li>Não é cura. Não promete acabar com a ansiedade.</li>
+          <li>Não é terapia, e não substitui psicólogo, psiquiatra ou médico.</li>
+          <li>Não é livro de frase motivacional.</li>
+          <li>Não é fórmula rápida. Funciona aos poucos, se você praticar.</li>
+          <li>Não é um convite para engolir o que você sente.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="name-note">
+      "Ser estoico" não é ser frio. Não é não sentir nada.
+      <span>É sentir o medo, a tristeza, a raiva, e ainda assim conseguir enxergar o que fazer. O livro se chama <strong>Seja Estoico</strong> porque é isso que ele ensina: agir com clareza mesmo sentindo.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CADA CAPÍTULO, O MESMO CAMINHO -->
+<section id="caminho">
+  <div class="wrap">
+    <div class="eyebrow">Por dentro</div>
+    <h2 class="h2">Cada capítulo,<br>o mesmo <em>caminho.</em></h2>
+    <p class="lead">Você sabe sempre onde está. Seis passos, do seu dia a dia até o caderno de Marco Aurélio, e de volta.</p>
+    <div class="steps carousel"><div class="car-track">
+      <figure><div class="shot"><img src="pg-abertura.webp" alt="Abertura do capítulo 1" loading="lazy"><span class="k">I</span></div><figcaption class="cap"><b>Capítulo 1:</b> O café esfriou.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cap1.webp" alt="Primeira página do capítulo 1" loading="lazy"><span class="k">p.4</span></div><figcaption class="cap"><b>A primeira página:</b> como o livro começa.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cena.webp" alt="Página do livro: A cena" loading="lazy" width="642" height="909"><span class="k">01</span></div><figcaption class="cap"><b>A cena:</b> um momento comum, para você se reconhecer.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-vida.webp" alt="Página do livro: A vida dele" loading="lazy" width="642" height="909"><span class="k">02</span></div><figcaption class="cap"><b>A vida dele:</b> uma situação real de Marco Aurélio, parecida com a sua.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-escreveu.webp" alt="Página do livro: O que ele escreveu" loading="lazy" width="642" height="909"><span class="k">03</span></div><figcaption class="cap"><b>O que ele escreveu:</b> explicado em linguagem simples, com a passagem indicada.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-interpretacao.webp" alt="Página do livro: O que ele provavelmente faria" loading="lazy" width="642" height="909"><span class="k">04</span></div><figcaption class="cap"><b>O que ele provavelmente faria:</b> sempre marcado como interpretação, não como fato.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-exercicio.webp" alt="Página do livro: O exercício" loading="lazy" width="642" height="909"><span class="k">05</span></div><figcaption class="cap"><b>O exercício:</b> prático, curto, para fazer no mesmo dia.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-falha.webp" alt="Página do livro: Onde isso falha" loading="lazy" width="642" height="909"><span class="k">06</span></div><figcaption class="cap"><b>Onde isso falha:</b> o limite honesto do método, em cada tema.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-abertura.webp" alt="Abertura do capítulo 1" loading="lazy" aria-hidden="true"><span class="k">I</span></div><figcaption class="cap"><b>Capítulo 1:</b> O café esfriou.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cap1.webp" alt="Primeira página do capítulo 1" loading="lazy" aria-hidden="true"><span class="k">p.4</span></div><figcaption class="cap"><b>A primeira página:</b> como o livro começa.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-cena.webp" alt="Página do livro: A cena" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">01</span></div><figcaption class="cap"><b>A cena:</b> um momento comum, para você se reconhecer.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-vida.webp" alt="Página do livro: A vida dele" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">02</span></div><figcaption class="cap"><b>A vida dele:</b> uma situação real de Marco Aurélio, parecida com a sua.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-escreveu.webp" alt="Página do livro: O que ele escreveu" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">03</span></div><figcaption class="cap"><b>O que ele escreveu:</b> explicado em linguagem simples, com a passagem indicada.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-interpretacao.webp" alt="Página do livro: O que ele provavelmente faria" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">04</span></div><figcaption class="cap"><b>O que ele provavelmente faria:</b> sempre marcado como interpretação, não como fato.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-exercicio.webp" alt="Página do livro: O exercício" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">05</span></div><figcaption class="cap"><b>O exercício:</b> prático, curto, para fazer no mesmo dia.</figcaption></figure>
+      <figure><div class="shot"><img src="pg-falha.webp" alt="Página do livro: Onde isso falha" loading="lazy" aria-hidden="true" width="642" height="909"><span class="k">06</span></div><figcaption class="cap"><b>Onde isso falha:</b> o limite honesto do método, em cada tema.</figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<!-- 6. CAPÍTULOS -->
+<section id="capitulos">
+  <div class="wrap acervo">
+    <div>
+      <div class="eyebrow">O que você vai encontrar</div>
+      <h2 class="h2">Os <em class="big">14</em><br>capítulos.</h2>
+      <p class="lead">Do café frio na cozinha até um caderno que é só seu. Cada capítulo cuida de um pedaço do que a ansiedade mistura.</p>
+    </div>
+    <div class="list">
+      <div class="item"><span class="n">01</span><span class="ti">O café esfriou</span><span class="de">A cena que abre o livro: a cabeça longe, a xícara fria na mão.</span></div>
+      <div class="item"><span class="n">08</span><span class="ti">Medo de perder</span><span class="de">Amar alguém sabendo que nada é garantido.</span></div>
+      <div class="item"><span class="n">02</span><span class="ti">O imperador que escrevia pra si mesmo</span><span class="de">Quem era Marco Aurélio e como o caderno dele chegou até nós.</span></div>
+      <div class="item"><span class="n">09</span><span class="ti">Trabalho, dinheiro e cobrança</span><span class="de">O chefe, a conta, a lista que não termina.</span></div>
+      <div class="item"><span class="n">03</span><span class="ti">A panela</span><span class="de">A ansiedade é feita de tudo ao mesmo tempo. Vamos separar.</span></div>
+      <div class="item"><span class="n">10</span><span class="ti">Gente difícil</span><span class="de">Conviver sem levar o outro pra casa na cabeça.</span></div>
+      <div class="item"><span class="n">04</span><span class="ti">O que depende de mim</span><span class="de">A separação mais antiga do estoicismo, aplicada à sua semana.</span></div>
+      <div class="item"><span class="n">11</span><span class="ti">Corpo e noite</span><span class="de">Insônia, respiração e o que a mente faz quando você deita e não consegue dormir.</span></div>
+      <div class="item"><span class="n">05</span><span class="ti">Ensaiar a terça-feira, não o desastre</span><span class="de">Preparar o dia comum, em vez do pior cenário.</span></div>
+      <div class="item"><span class="n">12</span><span class="ti">O olhar de cima</span><span class="de">Ver o problema do tamanho que ele realmente tem.</span></div>
+      <div class="item"><span class="n">06</span><span class="ti">A imaginação trabalha contra você</span><span class="de">Quando a mente escreve o filme antes de acontecer.</span></div>
+      <div class="item"><span class="n">13</span><span class="ti">Quando a ansiedade volta</span><span class="de">Porque ela volta. E isso não quer dizer que você falhou.</span></div>
+      <div class="item"><span class="n">07</span><span class="ti">O que os outros pensam de mim</span><span class="de">O medo do julgamento, e o que é seu nessa história.</span></div>
+      <div class="item"><span class="n">14</span><span class="ti">O seu caderno</span><span class="de">A rotina final, com todos os exercícios num só lugar.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. PARA QUEM É / NÃO É -->
+<section id="para-quem">
+  <div class="wrap">
+    <div class="eyebrow">Antes de tudo</div>
+    <h2 class="h2">Para quem é.<br><em>Para quem não é.</em></h2>
+    <div class="who">
+      <div>
+        <h3>É pra você se</h3>
+        <ul>
+          <li>sua cabeça acelera à noite e você tem dificuldade para desligar;</li>
+          <li>você sofre por coisas que ainda nem aconteceram;</li>
+          <li>você se cobra demais, ou se preocupa demais com o que os outros pensam;</li>
+          <li>você quer algo prático e honesto, sem frase pronta e sem promessa milagrosa;</li>
+          <li>você nunca leu filosofia, mas está disposto a pegar papel e caneta.</li>
+        </ul>
+      </div>
+      <div class="not">
+        <h3>Não é pra você se</h3>
+        <ul>
+          <li>você busca tratamento ou diagnóstico. O livro não substitui psicólogo, psiquiatra ou médico;</li>
+          <li>você espera uma solução rápida e garantida;</li>
+          <li>você está passando por uma crise forte, com sintomas intensos ou pensamentos de se machucar.</li>
+        </ul>
+        <p class="cvv">Se for o seu caso agora, procure ajuda profissional ou um serviço de apoio. No Brasil, o CVV atende de graça, 24 horas, pelo telefone <strong>188</strong> ou em cvv.org.br.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. AUTOR -->
+<section id="autor">
+  <div class="wrap">
+    <div class="eyebrow">Quem escreveu</div>
+    <h2 class="h2">Estoico<br><em>Noturno.</em></h2>
+    <div class="author">
+      <img class="avatar-img" src="autor.webp" alt="Ilustração do Estoico Noturno" loading="lazy">
+      <div>
+        <p>Estoico Noturno é um canal no YouTube sobre estoicismo aplicado à ansiedade do dia a dia. Não sobre a filosofia de museu, mas sobre o que ela pode fazer numa terça-feira difícil.</p>
+        <p>Eu convivo com ansiedade todos os dias. Acordo e a cabeça já está lá na frente, ensaiando conversas que ainda não aconteceram e problemas que talvez nem aconteçam. Antes mesmo de começar qualquer coisa, eu já estou cansado dela. A preocupação vira preguiça, a preguiça vira culpa, e a culpa alimenta a preocupação de novo.</p>
+        <p>Foi nesse ciclo que eu encontrei Marco Aurélio. Não como um sábio inalcançável, mas como um homem que também acordava com a mente em guerra e escrevia para si mesmo, todas as noites, para não se perder. Comecei a fazer o mesmo. Não resolveu tudo, e ainda tem dia difícil. Mas hoje eu sei separar o que depende de mim do que não depende, e isso já muda a manhã inteira.</p>
+        <p>Não sou psicólogo nem médico. Este livro é o que eu gostaria de ter lido nas noites em que a cabeça não parava: honesto sobre o que ajuda e sobre o que não ajuda.</p>
+        <p class="sig">Estoico Noturno</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Dúvidas</div>
+    <h2 class="h2">Antes de<br><em>comprar.</em></h2>
+    <div class="faq">
+      <details><summary>Isso é terapia?</summary><p>Não. É um livro. Ele pode ser um bom companheiro para quem faz terapia, mas não substitui o acompanhamento de um psicólogo, psiquiatra ou médico.</p></details>
+      <details><summary>Serve para ansiedade forte?</summary><p>Se a ansiedade está atrapalhando muito a sua vida, com crises frequentes ou sintomas intensos, o primeiro passo é procurar um profissional de saúde. O livro pode ajudar junto com o tratamento, nunca no lugar dele.</p></details>
+      <details><summary>Em quanto tempo vejo resultado?</summary><p>Não dá para prometer um prazo, e desconfie de quem promete. Algumas pessoas sentem diferença na primeira vez que fazem o caderno de três linhas. Para outras, leva semanas de prática. O livro ensina a pensar e a conviver com a ansiedade, não a fazê-la desaparecer.</p></details>
+      <details><summary>"Ser estoico" é reprimir o que eu sinto?</summary><p>Não. Esse é o mal-entendido mais comum. Marco Aurélio sentia medo, luto e raiva, e escrevia sobre isso. Ser estoico é reconhecer o que você sente e, mesmo assim, conseguir escolher o que fazer.</p></details>
+      <details><summary>Preciso já ter lido filosofia?</summary><p>Não. Tudo é explicado em linguagem simples, a partir de situações do dia a dia. Se você nunca ouviu falar de Marco Aurélio, o capítulo 2 apresenta ele.</p></details>
+      <details><summary>Em que formato vem?</summary><p>E-book em PDF, com ilustrações originais em estilo de gravura. As fichas dos exercícios, no apêndice, podem ser impressas.</p></details>
+      <details><summary>Consigo ler no celular?</summary><p>Sim. O PDF abre no celular, no tablet e no computador. Para as fichas, se preferir, dá para imprimir.</p></details>
+      <details><summary>Como eu recebo?</summary><p>Logo depois da confirmação do pagamento, você recebe o acesso por e-mail. Se não encontrar, olhe a caixa de spam ou promoções.</p></details>
+      <details><summary>Tem garantia?</summary><p>Sim, 7 dias. Se não for o que você esperava, é só pedir o reembolso dentro desse prazo, como garante a lei para compras online.</p></details>
+      <details><summary>As frases de Marco Aurélio são citações exatas?</summary><p>Não. Elas são parafraseadas, em português simples, a partir das <em>Meditações</em>. E sempre que o livro imagina o que ele faria na sua situação, isso vem marcado como interpretação.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 11 + 14. OFERTA / CHAMADA FINAL -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <h2 class="h2">Sua cabeça não vai parar sozinha.<br>Mas você pode <em>parar de obedecer.</em></h2>
+    <p class="lead">Marco Aurélio governava um império e mesmo assim acordava com a mente em guerra. O que ele anotava para si mesmo cabe hoje num caderno, em poucos minutos por dia. Comece esta noite, no seu ritmo.</p>
+    <div class="meta">Investimento</div>
+    <div class="price">R$ 27,90</div>
+    <div class="parcela">ou 6x de R$ 5,40</div>
+    <div class="price-note">Pagamento único · acesso imediato ao PDF</div>
+    <a class="btn red buy" href="#">Quero o Seja Estoico</a>
+    <img class="selo" src="selo-garantia.webp" alt="Garantia de 7 dias" width="180" height="180">
+    <div><span class="guar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e5251e" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+      Garantia de 7 dias: se não for pra você, seu dinheiro volta.
+    </span></div>
+  </div>
+</section>
+
+<!-- 13. AVISO DE SAÚDE -->
+<div class="health">
+  <div class="wrap">
+    <div class="box">
+      <b>Aviso importante sobre saúde</b>
+      <p>Seja Estoico é um livro de reflexão e exercícios inspirados na filosofia estoica. Ele não é tratamento, não faz diagnóstico e não substitui o acompanhamento de psicólogo, psiquiatra ou médico.</p>
+      <p>Se você está em sofrimento intenso ou tem pensamentos de se machucar, procure ajuda agora: CVV, ligação gratuita pelo <strong>188</strong>, 24 horas, ou cvv.org.br. Em emergência, ligue 192 (SAMU).</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© Estoico Noturno · Seja Estoico</span>
+    <span>Frases de Marco Aurélio parafraseadas a partir das <em>Meditações</em>.</span>
+  </div>
+</footer>
+
+<script>
+  // Coloque aqui o link do checkout (Hotmart, Kiwify...). Todos os botões de compra usam este link.
+  const CHECKOUT_URL = "[LINK DE COMPRA]";
+  document.querySelectorAll('.buy').forEach(a => {
+    if (CHECKOUT_URL.startsWith('http')) a.href = CHECKOUT_URL;
+    else a.href = '#oferta';
+  });
+
+</script>
+</body>
+</html>
